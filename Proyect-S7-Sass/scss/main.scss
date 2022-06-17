@@ -104,7 +104,7 @@ header {
 		padding: 200px 12px;
 	}
 }
-#nuestro-catalogo {
+@mixin cartas ($bgcarta) {
 	background-color: rgb(30,30,30);
 	color: white;
 	text-align: center;
@@ -125,6 +125,12 @@ header {
 		margin: 30px;
 		border-radius: 15px;
 	}
+}
+#nuestro-catalogo {
+	@include cartas($bgcartas)
+}
+@mixin cartas {
+	
 }
 .carta {
 	&:first-child {
@@ -247,8 +253,6 @@ footer {
 		}
 	}
 	footer {
-		.container {
-			justify-content: center;
-		}
+		@extend header;
 	}
 }
